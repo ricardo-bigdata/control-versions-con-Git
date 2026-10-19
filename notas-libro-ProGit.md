@@ -61,7 +61,7 @@ Hai dúas formas de comezar:
 Os ficheiros no teu directorio de traballo poden ser:
 *   **Rastrexados (Tracked):** estaban na última instantánea. Poden estar *sen modificar*, *modificados* ou *preparados* (staged).
 *   **Non rastrexados (Untracked):** todo o demais. Git non os inclúe nos commits a menos que llo indiques.
-![Ciclo de vida do estado dos arquivos](./imaxes/cicloVidaEstadoArquivost.png)
+![Ciclo de vida do estado dos arquivos](./imaxes/cicloVidaEstadoArquivos.png)
 **Fluxo básico:** modificar ficheiros-> `git add` (preparar) -> `git commit` (confirmar).
 
 ### 3. Comandos esenciais para gardar cambios
