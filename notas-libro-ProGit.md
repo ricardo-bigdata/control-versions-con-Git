@@ -98,7 +98,7 @@ O comando **`git log`** amosa o historial de confirmacións en orde cronolóxica
 
 ### 7. Etiquetado (*tags*)
 Serve para marcar puntos importantes no historial (p.e.: versións).
-*   **Lixeiras:**un simple punteiro a un commit (`git tag v1.0`).
+*   **Lixeiras:** un simple punteiro a un commit (`git tag v1.0`).
 *   **Anotadas:** gárdanse como obxectos completos, con autor, data e mensaxe (`git tag -a v1.0 -m "versión 1.0"`).
 *   Para enviar as etiquetas ao servidor, cómpre facelo explicitamente: `git push origin <etiqueta>` ou `git push origin --tags`.
 
