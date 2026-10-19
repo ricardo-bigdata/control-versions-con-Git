@@ -92,7 +92,7 @@ O comando **`git log`** amosa o historial de confirmacións en orde cronolóxica
 *   **`git remote add <nome> <url>`:** engade un novo remoto.
 *   **`git fetch <remoto>`:** descarga os datos do remoto pero **non** os combina co teu traballo.
 *   **`git pull`:** descarga os datos e **combínaos** automaticamente coa túa póla actual.
-*   **`git push <remoto> <rama>`:** envía os teus *commits* ao servidor remoto.
+*   **`git push <remoto> <póla>`:** envía os teus *commits* ao servidor remoto.
 *   **`git remote show <remoto>`:** dá información detallada sobre o estado do remoto.
 *   **`git remote rename` / `git remote rm`:** renomea ou elimina un remoto.
 
@@ -107,3 +107,40 @@ Podes crear atallos para comandos longos usando `git config --global alias.<nome
 
 
 ## Terceiro tema do libro *Pro Git*: "Ramificacións en Git"
+
+### 1. Que é unha póla (*branch*) e por que é tan rápida?
+En Git, unha póla é simplemente **un punteiro móbil a unha confirmación (commit)**. A póla por defecto chámase `master`. O punteiro `HEAD` indica en que póla estás situado actualmente.
+Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 bytes nun ficheiro), mentres que noutros sistemas implica copiar todo o código.
+
+### 2. Crear e cambiar de póla
+*   **Crear:** `git branch <nome>` (só crea o punteiro, non salta a ela).
+*   **Cambiar (checkout):** `git checkout <nome>`. Move o `HEAD` e actualiza os ficheiros do directorio de traballo para que coincidan coa instantánea desa póla.
+*   **Crear e cambiar nun paso:** `git checkout -b <nome>`.
+
+### 3. Fusións (*merging*) e Conflictos
+*   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
+*   **Fast-forward (Avance rápido):** Se a póla actual está directamente por detrás da que queres fusionar, Git simplemente move o punteiro cara adiante. É moi rápido.
+*   **Fusión a tres bandas (Three-way merge):** Se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (merge commit) con máis dun pai.
+*   **Conflictos:** Ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
+
+### 4. Xestión de póls
+*   `git branch`: Lista as pólas (a actual ten un `*`).
+*   `git branch -v`: Mostra a última confirmación de cada póla.
+*   `git branch --merged` / `--no-merged`: amosa as pólas que xa foron (ou non) fusionadas na actual.
+*   `git branch -d <póla>`: Borra unha póla xa fusionada.
+*   `git branch -D <póla>`: Forza o borrado dunha póla con traballo sen fusionar.
+
+### 5. Fluxos de traballo (*workflows*)
+*   **Ramas de longo recorrido (Long-running):** Manter póls estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
+*   **Ramas puntuais (Topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
+
+### 6. Pólas remotas e seguimento
+*   **Ramas remotas:** Son referencias (como `origin/master`) ao estado das pólas noutros servidores. Non son editables directamente; actualízanse cando fas `git fetch`.
+*   **Publicar:** `git push origin <póla>`.
+*   **Ramas de seguimento (Tracking branches):** son pólas locais vinculadas directamente a unha póla remota. Cando fas `git pull` desde elas, Git sabe de onde traer os datos. Créanse facilmente con `git checkout --track origin/<póla>`.
+*   **Borrar remotas:** `git push origin --delete <póla>`.
+
+### 7. Reorganización (*rebasing*)
+*   **`git rebase <póla_base>`:** Toma os cambios da túa póla e "reaplícaos" sobre a póla base, como se os tiveses feito secuencialmente. Isto crea un historial lineal moi limpo (sen as confirmacións de fusión).
+*   **Regra de Ouro do Rebase:** **Nunca reorganices (rebase) confirmacións que xa enviaches a un repositorio público**. Se o fas, estás a reescribir o historial, o que causará problemas graves aos teus compañeiros cando intenten traballar.
+*   **Rebase vs. Merge:** A instantánea final (o código) é a mesma, pero o historial é distinto. O rebase limpa o historial local antes de publicalo; o merge conserva a historia real de como se traballou en paralelo.
