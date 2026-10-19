@@ -7,7 +7,7 @@ Un VCS rexistra os cambios nos ficheiros ao longo do tempo para poder recuperar 
 *   **Distribuídos (DVCS):** cada cliente ten unha **copia completa** do repositorio (como Git). Se o servidor falla, calquera cliente pode restauralo.
 
 ### 2. Breve historia de Git
-Git naceu en 2005, creado por Linus Torvalds (creador de Linux) despois de que a comunidade de Linux deixase de usar o sistema propietario BitKeeper. Os seus obxectivos eran: **velocidade, deseño sinxelo, soporte para miles de ramas (desenvolvemento non lineal), completamente distribuído** e capaz de xestionar grandes proxectos.
+Git naceu en 2005, creado por Linus Torvalds (creador de Linux) despois de que a comunidade de Linux deixase de usar o sistema propietario BitKeeper. Os seus obxectivos eran: **velocidade, deseño sinxelo, soporte para miles de pólas (desenvolvemento non lineal), completamente distribuído** e capaz de xestionar grandes proxectos.
 
 ### 3. Fundamentos de Git (como funciona)
 *   **Instantáneas (snapshots), non diferenzas:** a diferenza doutros sistemas que gardan os cambios (deltas) ficheiro por ficheiro, Git fai unha “foto” do estado de todos os ficheiros en cada confirmación. Se un ficheiro non cambiou, fai unha ligazón ao anterior para aforrar espazo.
@@ -131,13 +131,13 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 *   `git branch -D <póla>`: Forza o borrado dunha póla con traballo sen fusionar.
 
 ### 5. Fluxos de traballo (*workflows*)
-*   **Ramas de longo recorrido (Long-running):** Manter póls estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
-*   **Ramas puntuais (Topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
+*   **Pólas de longo recorrido (Long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
+*   **Pólas puntuais (Topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
 
 ### 6. Pólas remotas e seguimento
-*   **Ramas remotas:** Son referencias (como `origin/master`) ao estado das pólas noutros servidores. Non son editables directamente; actualízanse cando fas `git fetch`.
+*   **Pólas remotas:** Son referencias (como `origin/master`) ao estado das pólas noutros servidores. Non son editables directamente; actualízanse cando fas `git fetch`.
 *   **Publicar:** `git push origin <póla>`.
-*   **Ramas de seguimento (Tracking branches):** son pólas locais vinculadas directamente a unha póla remota. Cando fas `git pull` desde elas, Git sabe de onde traer os datos. Créanse facilmente con `git checkout --track origin/<póla>`.
+*   **Pólass de seguimento (Tracking branches):** son pólas locais vinculadas directamente a unha póla remota. Cando fas `git pull` desde elas, Git sabe de onde traer os datos. Créanse facilmente con `git checkout --track origin/<póla>`.
 *   **Borrar remotas:** `git push origin --delete <póla>`.
 
 ### 7. Reorganización (*rebasing*)
