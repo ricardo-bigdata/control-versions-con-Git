@@ -26,11 +26,26 @@ Os ficheiros en Git poden estar en tres estados:
 
 Isto corresponde a 3 áreas do proxecto: **Directorio de traballo** (onde editas), **Área de preparación** (staging area, onde pos o que queres gardar) e **Directorio de Git** (onde se garda o historial).
 
-**Fluxo de traballo básico:** Modificar ficheiros \(\rightarrow\) Preparalos (Stage) \(\rightarrow\) Confirmalos (Commit).
+- O **directorio de traballo** é unha copia dunha versión do proxecto. Estes arquivos sácanse da base de datos comprimida no directorio de Git, e colócanse en disco para que os poidas usar ou modificar.
+- A **área de preparación** é un arquivo, xeralmente contido no teu directorio de Git, que almacena información acerca do que vai ir na túa próxima confirmación. A veces chámaselle **índice (*index*)**.
+- O **directorio de Git** é onde se almacenan os metadatos e a base de datos de obxectos para o teu proxecto. É a parte máis importante de Git, e é o que se copia cando clonas un repositorio desde outra computadora.
+
+**Fluxo de traballo básico:** Modificar ficheiros -> Preparalos (`Stage`) -> Confirmalos (`Commit`).
 
 ### 5. Instalación e Configuración
-*   **Liña de comandos:** É a única maneira de executar *todos* os comandos de Git.
-*   **Configuración inicial:** Cómpre facelo unha soa vez.
-    *   Identidade: `git config --global user.name "Nome"` e `git config --global user.email "correo@exemplo.com"`.
-    *   Editor por defecto: `git config --global core.editor emacs` (ou o que prefiras).
-*   **Axuda:** Podes consultar o manual de calquera comando con `git help <comando>` ou `git <comando> --help`.
+*   **Liña de comandos:** é a única maneira de executar *todos* os comandos de Git.
+*   **Configuración inicial:** cómpre facelo unha soa vez.
+    *   Identidade: `git config --global user.name "Nome"` e `git config --global user.email "correo@exemplo.gal"`.
+    *   Editor por defecto: `git config --global core.editor vim` (ou o que prefiras).
+*   Se queres comprobar a tu configuración, podes usar o comando `git config --list` para amosar tódalas propiedades que Git configurou:
+```bash
+$ git config --list
+user.name=Ricardo Veiga
+user.email=ricardo@exemplo.gal
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
+```
+*   **Axuda:** podes consultar o manual de calquera comando con `git help <comando>` ou `git <comando> --help`.
