@@ -119,11 +119,11 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 *   **Cambiar (checkout):** `git checkout <nome>`. Move o `HEAD` e actualiza os ficheiros do directorio de traballo para que coincidan coa instantánea desa póla.
 *   **Crear e cambiar nun paso:** `git checkout -b <nome>`.
 
-### 3. Fusións (*merging*) e Conflictos
+### 3. Fusións (*merging*) e conflitos
 *   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
 *   **Fast-forward (Avance rápido):** Se a póla actual está directamente por detrás da que queres fusionar, Git simplemente move o punteiro cara adiante. É moi rápido.
 *   **Fusión a tres bandas (Three-way merge):** Se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (merge commit) con máis dun pai.
-*   **Conflictos:** Ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
+*   **Conflitos:** Ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
 
 ### 4. Xestión de pólas
 *   `git branch`: Lista as pólas (a actual ten un `*`).
@@ -133,13 +133,13 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 *   `git branch -D <póla>`: Forza o borrado dunha póla con traballo sen fusionar.
 
 ### 5. Fluxos de traballo (*workflows*)
-*   **Pólas de longo recorrido (Long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
-*   **Pólas puntuais (Topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
+*   **Pólas de longo recorrido (long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
+*   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
 
 ### 6. Pólas remotas e seguimento
 *   **Pólas remotas:** Son referencias (como `origin/master`) ao estado das pólas noutros servidores. Non son editables directamente; actualízanse cando fas `git fetch`.
 *   **Publicar:** `git push origin <póla>`.
-*   **Pólass de seguimento (Tracking branches):** son pólas locais vinculadas directamente a unha póla remota. Cando fas `git pull` desde elas, Git sabe de onde traer os datos. Créanse facilmente con `git checkout --track origin/<póla>`.
+*   **Pólas de seguimento (Tracking branches):** son pólas locais vinculadas directamente a unha póla remota. Cando fas `git pull` desde elas, Git sabe de onde traer os datos. Créanse facilmente con `git checkout --track origin/<póla>`.
 *   **Borrar remotas:** `git push origin --delete <póla>`.
 
 ### 7. Reorganización (*rebasing*)
