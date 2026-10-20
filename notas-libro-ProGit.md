@@ -1,4 +1,6 @@
 # Notas do libro *Pro Git* de Scott Chacon e Ben Straub
+- licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
 ## Primeiro tema do libro *Pro Git*: "Inicio - Sobre o Control de Versións"
 ### 1. Evolución dos Sistemas de Control de Versións (VCS)
 Un VCS rexistra os cambios nos ficheiros ao longo do tempo para poder recuperar versións anteriores. Hai tres tipos:
@@ -109,7 +111,7 @@ Podes crear atallos para comandos longos usando `git config --global alias.<nome
 ## Terceiro tema do libro *Pro Git*: "Ramificacións en Git"
 
 ### 1. Que é unha póla (*branch*) e por que é tan rápida?
-En Git, unha póla é simplemente **un punteiro móbil a unha confirmación (commit)**. A póla por defecto chámase `master`. O punteiro `HEAD` indica en que póla estás situado actualmente.
+En Git, unha póla é simplemente **un punteiro móbil a unha confirmación (*commit*)**. A póla por defecto chámase `master`. O punteiro `HEAD` indica en que póla estás situado actualmente.
 Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 bytes nun ficheiro), mentres que noutros sistemas implica copiar todo o código.
 
 ### 2. Crear e cambiar de póla
@@ -123,7 +125,7 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 *   **Fusión a tres bandas (Three-way merge):** Se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (merge commit) con máis dun pai.
 *   **Conflictos:** Ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
 
-### 4. Xestión de póls
+### 4. Xestión de pólas
 *   `git branch`: Lista as pólas (a actual ten un `*`).
 *   `git branch -v`: Mostra a última confirmación de cada póla.
 *   `git branch --merged` / `--no-merged`: amosa as pólas que xa foron (ou non) fusionadas na actual.
