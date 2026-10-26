@@ -124,9 +124,11 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 ![Apuntador HEAD](./imaxes/apuntadorHEAD.jpg)
 
 Ó saltar dunha póla a outra, co comando `git checkout`, o que realmente ocorre é que o pùnteiro `HEAD` móvese á póla indicada.
-![Cambio de póla](./imaxes/cambiopola.jpg)
+![Cambio de póla](./imaxes/cambioPola.jpg)
 
-
+> Saltar entre pólas cambia arquivos no teu directorio de traballo
+Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo cambian. Se saltas a unha póla antiga, o teu directorio de traballo retrocederá para verse como o facía a última vez que confirmaches un cambio na devandita póla.
+![Saltos entre pólas](./imaxes/saltosPolas.jpg)
 
 ### 3. Fusións (*merging*) e conflitos
 *   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
