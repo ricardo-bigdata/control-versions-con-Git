@@ -139,6 +139,9 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
 ![Borrado de pólas](./imaxes/borrarPolas.jpg)
 
 *   **Fusión a tres bandas (Three-way merge):** se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (*merge commit*) con máis dun pai.
+
+![Fusión de pólas a 3 bandas](./imaxes/fusionPolas3Bandas.jpg)
+
 *   **Conflitos:** ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
 
 ### 4. Xestión de pólas
