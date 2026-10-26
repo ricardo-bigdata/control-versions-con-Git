@@ -121,7 +121,7 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 *   **Cambiar (checkout):** `git checkout <nome>`. Move o `HEAD` e actualiza os ficheiros do directorio de traballo para que coincidan coa instantánea desa póla.
 *   **Crear e cambiar nun paso:** `git checkout -b <nome>`.
 
-![Apuntador HEAD](./imaxes/apuntadorHEAD.png)
+![Apuntador HEAD](./imaxes/apuntadorHEAD.jpg)
 
 ### 3. Fusións (*merging*) e conflitos
 *   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
