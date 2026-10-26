@@ -131,10 +131,16 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
 ![Saltos entre pólas](./imaxes/saltosPolas.jpg)
 
 ### 3. Fusións (*merging*) e conflitos
-*   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
-*   **Fast-forward (Avance rápido):** Se a póla actual está directamente por detrás da que queres fusionar, Git simplemente move o punteiro cara adiante. É moi rápido.
-*   **Fusión a tres bandas (Three-way merge):** Se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (merge commit) con máis dun pai.
-*   **Conflitos:** Ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
+*   **`git merge <póla>`:** integra os cambios dunha póla na póla actual.
+*   **Fast-forward (Avance rápido):** se a póla actual está directamente por detrás da que queres fusionar, Git simplemente move o punteiro cara adiante. É moi rápido.
+
+![Fusión de pólas](./imaxes/fusionPolas.jpg)
+
+![Borrado de pólas](./imaxes/borrarPolas.jpg)
+
+
+*   **Fusión a tres bandas (Three-way merge):** se as pólas diverxeron, Git usa as dúas instantáneas finais e o seu "ancestro común" para crear unha **nova confirmación de fusión** (*merge commit*) con máis dun pai.
+*   **Conflitos:** ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
 
 ### 4. Xestión de pólas
 *   `git branch`: Lista as pólas (a actual ten un `*`).
