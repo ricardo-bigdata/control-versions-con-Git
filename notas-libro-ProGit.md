@@ -123,6 +123,11 @@ Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 by
 
 ![Apuntador HEAD](./imaxes/apuntadorHEAD.jpg)
 
+Ó saltar dunha póla a outra, co comando `git checkout`, o que realmente ocorre é que o pùnteiro `HEAD` móvese á póla indicada.
+![Cambio de póla](./imaxes/cambiopola.jpg)
+
+
+
 ### 3. Fusións (*merging*) e conflitos
 *   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
 *   **Fast-forward (Avance rápido):** Se a póla actual está directamente por detrás da que queres fusionar, Git simplemente move o punteiro cara adiante. É moi rápido.
