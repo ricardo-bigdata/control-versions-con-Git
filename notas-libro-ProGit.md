@@ -114,10 +114,14 @@ Podes crear atallos para comandos longos usando `git config --global alias.<nome
 En Git, unha póla é simplemente **un punteiro móbil a unha confirmación (*commit*)**. A póla por defecto chámase `master`. O punteiro `HEAD` indica en que póla estás situado actualmente.
 Crear ou eliminar unha póla en Git é case instantáneo (require escribir 41 bytes nun ficheiro), mentres que noutros sistemas implica copiar todo o código.
 
+![commits e árbores](./imaxes/apuntadoresCommits.png)
+
 ### 2. Crear e cambiar de póla
 *   **Crear:** `git branch <nome>` (só crea o punteiro, non salta a ela).
 *   **Cambiar (checkout):** `git checkout <nome>`. Move o `HEAD` e actualiza os ficheiros do directorio de traballo para que coincidan coa instantánea desa póla.
 *   **Crear e cambiar nun paso:** `git checkout -b <nome>`.
+
+![Apuntador HEAD](./imaxes/apuntadorHEAD.png)
 
 ### 3. Fusións (*merging*) e conflitos
 *   **`git merge <póla>`:** Integra os cambios dunha póla na póla actual.
