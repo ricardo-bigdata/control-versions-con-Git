@@ -153,7 +153,7 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
    * No caso de que unha póla teña traballos sen fusionar, o borrado con `-d' daría un erro.
 * `git branch -D <póla>`: forza o borrado dunha póla con traballo sen fusionar.
 
-### 5. Fluxos de traballo (*workflows*)
+### 5. Fluxos de traballo ramificados (*workflows*)
 *   **Pólas de longo recorrido (long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
 *   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
 
