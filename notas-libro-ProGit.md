@@ -154,8 +154,8 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
 * `git branch -D <póla>`: forza o borrado dunha póla con traballo sen fusionar.
 
 ### 5. Fluxos de traballo ramificados (*workflows*)
-*   **Pólas de longo recorrido (long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
-*   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (ex. `iss53`, `hotfix`). Créanse, fusiónanse e bótanse rapidamente.
+*   **Pólas de longo recorrido (long-running):** manter pólas estables (p.e. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
+*   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (p.e. `iss53`, `hotfix`). Créanse, fusiónanse e desbótanse rapidamente.
 
 ![Pólas de longo percorrido](./imaxes/polasLongRunning.png)
 
