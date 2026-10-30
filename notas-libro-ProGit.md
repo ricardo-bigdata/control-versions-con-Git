@@ -145,11 +145,13 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
 *   **Conflitos:** ocorren cando se modifica a mesma parte dun ficheiro en ambas pólas. Git pausa a fusión e marca o ficheiro con símbolos (`<<<<<<<`, `=======`, `>>>>>>>`). Debes editar o ficheiro manualmente (ou usar `git mergetool`), resolvelo, marcar como preparado (`git add`) e confirmar (`git commit`).
 
 ### 4. Xestión de pólas
-*   `git branch`: Lista as pólas (a actual ten un `*`).
-*   `git branch -v`: Mostra a última confirmación de cada póla.
-*   `git branch --merged` / `--no-merged`: amosa as pólas que xa foron (ou non) fusionadas na actual.
-*   `git branch -d <póla>`: Borra unha póla xa fusionada.
-*   `git branch -D <póla>`: Forza o borrado dunha póla con traballo sen fusionar.
+* `git branch`: lista as pólas (a actual ten un `*`).
+* `git branch -v`: amosa a última confirmación de cambios de cada póla.
+* `git branch --merged` / `--no-merged`: amosa as pólas que xa foron (ou non) fusionadas na actual.
+   * No caso de `--merged`, as pólas que non levan por diante o carácter `*` poden ser eliminadas sen problemas, porque todo o seu contido xa foi incorporado a outras pólas.
+* `git branch -d <póla>`: borra unha póla xa fusionada.
+   * No caso de que unha póla teña traballos sen fusionar, o borrado con `-d' daría un erro.
+* `git branch -D <póla>`: forza o borrado dunha póla con traballo sen fusionar.
 
 ### 5. Fluxos de traballo (*workflows*)
 *   **Pólas de longo recorrido (long-running):** Manter pólas estables (ex. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
