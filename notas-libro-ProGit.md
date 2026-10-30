@@ -155,10 +155,13 @@ Cando saltas a unha póla en Git, os arquivos de teu directorio de traballo camb
 
 ### 5. Fluxos de traballo ramificados (*workflows*)
 *   **Pólas de longo recorrido (long-running):** manter pólas estables (p.e. `master` para produción, `develop` para probas) que van integrando as novidades cando se estabilizan.
-*   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (p.e. `iss53`, `hotfix`). Créanse, fusiónanse e desbótanse rapidamente.
+
 
 ![Pólas de longo percorrido](./imaxes/polasLongRunning.png)
 
+*   **Pólas puntuais (topic branches):** pólas de curta duración para unha funcionalidade ou arranxo específico (p.e. `iss53`, `hotfix`). Créanse, fusiónanse e desbótanse rapidamente.
+
+![Pólas puntuais](./imaxes/polasTopicBranches.png)
 
 ### 6. Pólas remotas e seguimento
 *   **Pólas remotas:** Son referencias (como `origin/master`) ao estado das pólas noutros servidores. Non son editables directamente; actualízanse cando fas `git fetch`.
