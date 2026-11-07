@@ -40,7 +40,6 @@ git remote remove upstream
 
 Para sincroniza-lo meu fork coa nova póla `tests/1` creada no repositorio orixinal, hai que facer que o meu Git local coñeza ese repositorio orixinal, descarga-los seus cambios e despois subilos ó meu propio fork en GitLab. 
 
-O procedemento lévase a cabo a través dos seguintes pasos na terminal:
 
 ### 1. Engadi-lo repositorio orixinal como remoto (`upstream`)
 
@@ -57,7 +56,29 @@ Executamos un `fetch` apuntando a `upstream` para que o noso ordenador se descar
 ```bash
 git fetch upstream
 ```
-*Ó facer isto, o noso Git local creará unha póla de rastrexo remoto chamada `upstream/tests/1`.*
+**Ó facer isto, o noso Git local creará alomenos unha póla de rastrexo remoto chamada `upstream/tests/1`.**
+
+```bash
+git branch -a
+* develop
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/rb/javierConde/develop
+  remotes/origin/rb/ricardoVeiga/develop
+  remotes/upstream/main
+  remotes/upstream/rb/javierConde/develop
+  remotes/upstream/tests/1
+```
+
+
+> Cando executamo-lo comando `git fetch upstream`, estamos a dicirlle a Git: *"Conéctate ó repositorio pai e descárgate **toda** a información sobre o estado actual das súas pólas"*.
+>
+> Git non descarga só unha póla específica, senón que actualiza o mapa completo dese servidor no noso ordenador. Por iso agora vemos novas pólas co prefixo `remotes/upstream/`:
+> * `remotes/upstream/main`: a póla principal do repositorio pai.
+> * `remotes/upstream/rb/javierConde/develop`: a póla de desenvolvemento do noso compañeiro no repositorio pai.
+> * **`remotes/upstream/tests/1`**: a nova póla que queriamos sincronizar.
+
 
 ### 3. Trae-la póla ó noso contorno local
 
