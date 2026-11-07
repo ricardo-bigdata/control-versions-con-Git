@@ -1,0 +1,73 @@
+# Sincronizar meu fork con nova branch do repositorio orixinal
+
+## 1. Consulta-la lista de repositorios remotos configurados
+
+Antes de nada necesitamos saber se o noso git local xa ten rexistrado o repositorio pai (orixinal); para elo debemos consulta-la lista de **remotos** configurados no noso proxecto:
+
+```bash
+git remote -v
+
+origin	git@gitlab.com:ricardo-bigdata/edu-git-platega-202610-examen.git (fetch)
+origin	git@gitlab.com:ricardo-bigdata/edu-git-platega-202610-examen.git (push)
+```
+
+Se o noso Git local **xa sabe** onde está o repositorio pai, deberiamos ver na saída catro liñas en total: dúas para `origin` (o noso fork) e outras dúas para `upstream` (o repositorio pai). 
+
+O resultado debería ser moi semellante a este:
+
+```bash
+origin	git@gitlab.com:ricardo-bigdata/edu-git-platega-202610-examen.git (fetch)
+origin	git@gitlab.com:ricardo-bigdata/edu-git-platega-202610-examen.git (push)
+upstream	git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git (fetch)
+upstream	git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git (push)
+
+```
+
+### Que pasa se non aparece "upstream"?
+Se ó executa-lo comando só vemo-las liñas de `origin`, significa que o noso Git local **aínda non coñece o repositorio pai**. Nese caso, teriamos que executa-lo comando para engadilo:
+
+```bash
+git remote add upstream git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git
+```
+
+> En caso necesario pódese borrar con `git remote remove` calquera remoto, como p.e. este mesmo `upstream`; en realidade só elimina a "ligazón" ou o acceso directo que o noso Git local ten cara a ese servidor, non borra ningún ficheiro do noso ordenador nin afecta ó noso código.
+>```bash
+git remote remove upstream
+```
+
+## 2. Sincronizar meu fork coa nova póla "tests/1" creada no repositorio orixinal.
+
+Para sincroniza-lo meu fork coa nova póla `tests/1` creada no repositorio orixinal, hai que facer que o meu Git local coñeza ese repositorio orixinal, descarga-los seus cambios e despois subilos ó meu propio fork en GitLab. 
+
+O procedemento lévase a cabo a través dos seguintes pasos na terminal:
+
+### 1. Engadi-lo repositorio orixinal como remoto (`upstream`)
+Se aínda non o fixemos, debemos indicarlle ó noso Git local onde está o repositorio "pai" ou orixinal. O nome estándar para este remoto é `upstream`:
+
+```bash
+git remote add upstream git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git
+```
+
+### 2. Descarga-las novidades do repositorio orixinal
+Executamos un `fetch` apuntando a `upstream` para que o noso ordenador se descargue a información de tódalas pólas novas (incluída `tests/1`):
+
+```bash
+git fetch upstream
+```
+*Ó facer isto, o noso Git local creará unha póla de rastrexo remoto chamada `upstream/tests/1`.*
+
+### 3. Trae-la póla ó noso contorno local
+Agora situámonos nesa nova póla que acabamos de descubrir. O seguinte comando crea unha póla local `tests/1` idéntica á do repositorio orixinal:
+
+```bash
+git checkout -b tests/1 upstream/tests/1
+```
+
+### 4. Subi-la nova póla ó noso fork (`origin`)
+Por último, para que esta póla apareza tamén na interface web do noso fork en GitLab, debemos enviala ó noso remoto por defecto (`origin`):
+
+```bash
+git push -u origin tests/1
+```
+
+A partir deste momento, a póla `tests/1` xa formará parte do noso fork e estará perfectamente visible en GitLab.
