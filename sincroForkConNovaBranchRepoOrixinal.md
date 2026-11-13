@@ -13,6 +13,8 @@ origin	git@gitlab.com:ricardo-bigdata/edu-git-platega-202610-examen.git (push)
 
 Se o noso Git local **xa sabe** onde está o repositorio pai, deberiamos ver na saída catro liñas en total: dúas para `origin` (o noso fork) e outras dúas para `upstream` (o repositorio pai). 
 
+> ***upstream*** pode traducirse por "augas arriba" ou "corrente arriba"; no contexto de Git, emprégase para referirnos ó **repositorio orixinal** ou repositorio fonte do cal parte un proxecto.
+
 O resultado debería ser moi semellante a este:
 
 ```bash
@@ -22,6 +24,14 @@ upstream	git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.gi
 upstream	git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git (push)
 
 ```
+
+O comando `git remote -v` amosa as **conexións remotas configuradas** no teu repositorio local xunto cos seus enderezos URL completos. Esta saída indica que o este proxecto está conectado a dous repositorios en GitLab, como é típico de proxectos nos que o fluxo de traballo parten dun *fork* (bifurcación):
+
+- Nomes dos remotos (***origin*** e ***upstream***): son os alias curtos que usa Git para referirse ós servidores externos sen ter que escribi-lo enderezo completo cada vez.
+  - ***origin*** é simplemente o nome que Git pon por defecto ó clonar un repositorio. 
+- Nomes de pólas (***main***, ***master***): son etiquetas que apuntan a un *commit*. Antes de 2020, Git creaba por defecto unha póla chamada ***master***, pero actualmente, plataformas como ***GitHub*** e ***GitLab*** usan ***main*** por defecto, pero pódese renomear a *principal*, *producion* ou calquera outro nome válido.
+
+> Tanto o nome dos remotos (*origin*, *upstream*) coma o nome da póla principal (*main*, *master*) son simples convencións que se poden cambiar en calquera momento.
 
 ### Que pasa se non aparece "upstream"?
 Se ó executa-lo comando só vemo-las liñas de `origin`, significa que o noso Git local **aínda non coñece o repositorio pai**. Nese caso, teriamos que executa-lo comando para engadilo:
