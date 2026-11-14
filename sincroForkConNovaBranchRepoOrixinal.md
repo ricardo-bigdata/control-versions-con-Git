@@ -28,7 +28,7 @@ git fetch profesor main
 
 ---
     
-
+# REVISAR E CORRIXI-LAS SEGUINTES INSTRUCIÓNS
 
 ## 1. Consulta-la lista de repositorios remotos configurados
 
