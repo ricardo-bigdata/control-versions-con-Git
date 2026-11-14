@@ -1,5 +1,35 @@
 # Sincronizar meu fork con nova branch do repositorio orixinal
 
+Se quero descargar no meu fork as novidades do repo remoto orixinal:
+
+1. Revisar se se produciron actualizacións no repo orixinal. É a forma de asegurarse de te-la última versión do repo orixinal antes de empezar a traballar na miña versiónlocal. Para elo:
+
+- (Só a primeira vez) Engade como repo remoto o repo dende o que creamo-lo noso *fork*.
+
+```bash
+git remote add upstream git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git
+```
+
+- (Cada vez que retomemo-lo traballo) Revisa novedades e obtenas do repo orixinal remoto
+
+```bash
+git fetch profesor main
+```
+
+- (Cada vez que haxa novidades) Mistura estas novidades coa túa *release branch*. Se se producen conflitos haberá que decidir que facer.
+
+```bash
+    # Asegúrate primeiro de estar na túa release branch
+    git checkout rb/ricardoVeiga/develop
+    
+    # Despois mistúrate na túa póla actual as novidades
+    git merge upstream/main
+```
+
+--
+    
+
+
 ## 1. Consulta-la lista de repositorios remotos configurados
 
 Antes de nada necesitamos saber se o noso git local xa ten rexistrado o repositorio pai (orixinal); para elo debemos consulta-la lista de **remotos** configurados no noso proxecto:
