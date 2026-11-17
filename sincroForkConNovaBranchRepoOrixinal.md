@@ -2,7 +2,7 @@
 
 Se quero descargar no meu fork as novidades do repo remoto orixinal:
 
-1. Revisar se se produciron actualizacións no repo orixinal. É a forma de asegurarse de te-la última versión do repo orixinal antes de empezar a traballar na miña versiónlocal. Para elo:
+1. Revisar se se produciron actualizacións no repo orixinal. É a forma de asegurarse de te-la última versión do repo orixinal antes de empezar a traballar na miña versión local. Para elo:
 
 - (Só a primeira vez) Engade como repo remoto o repo dende o que creamo-lo noso *fork*.
 
@@ -10,11 +10,47 @@ Se quero descargar no meu fork as novidades do repo remoto orixinal:
 git remote add upstream git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-202610-examen.git
 ```
 
-- (Cada vez que retomemo-lo traballo) Revisa novedades e obtenas do repo orixinal remoto
+- (Cada vez que retomemo-lo traballo) Revisa novidades e obtenas do repo orixinal remoto
 
 ```bash
-git fetch profesor main
+# Descarga as novidades do repositorio orixinal (upstream)
+git fetch upstream main
 ```
+
+Para ve-las polas e repos:
+
+ ```bash
+git branch -a
+  main
+* rb/ricardoVeiga/develop
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/rb/ricardoVeiga/develop
+  remotes/upstream/main
+  remotes/upstream/tests/1
+```
+
+
+Se tivesemos varios repos remotos, podemos descarga-las novidades de todos á vez (`git fetch all`), ou ir un por un cando nos interesen:
+
+```bash
+## Descarga as novidades do teu fork remoto (origin)
+git fetch origin
+```
+> Podemos averiguar cal é o repo remoto asociado á pola na que estemos actualmente:
+>
+> ```bash
+>  git status -sb
+> ## rb/ricardoVeiga/develop...origin/rb/ricardoVeiga/develop
+> ```
+>
+> E con ese dato podemos especificar exactamente o repo local e remoto para evitar ambigüidades:
+>
+> ```bash
+> git fetch origin rb/ricardoVeiga/develop
+> ```
+> 
+
 
 - (Cada vez que haxa novidades) Mistura estas novidades coa túa *release branch*. Se se producen conflitos haberá que decidir que facer.
 
