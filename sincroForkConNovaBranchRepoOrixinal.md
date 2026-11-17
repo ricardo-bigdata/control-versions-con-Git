@@ -17,7 +17,7 @@ git remote add upstream git@gitlab.com:edu-git-platega-2026oct/edu-git-platega-2
 git fetch upstream main
 ```
 
-Para ve-las polas e repos:
+Para ve-las pólas e repos:
 
  ```bash
 git branch -a
@@ -51,15 +51,17 @@ git fetch origin
 > ```
 > 
 
-
-- (Cada vez que haxa novidades) Mistura estas novidades coa túa *release branch*. Se se producen conflitos haberá que decidir que facer.
+- Unha vez descargada a información, sitúate na túa póla de traballo e incorpora os cambios tanto de upstream/main como da túa pola remota en origin (por se traballaches desde outro ordenador ou aceptaches algún Merge Request na web):
 
 ```bash
-    # Asegúrate primeiro de estar na túa release branch
-    git checkout rb/ricardoVeiga/develop
-    
-    # Despois mistúrate na túa póla actual as novidades
-    git merge upstream/main
+# 1. Asegúrate primeiro de estar na túa release branch
+git switch rb/ricardoVeiga/develop
+
+# 2. Mestura na túa pola actual as novidades do repositorio orixinal (upstream)
+git merge upstream/main
+
+# 3. (Opcional) Mestura tamén se houbese cambios na túa pola remota de origin
+git merge origin/rb/ricardoVeiga/develop
 ```
 
 ---
